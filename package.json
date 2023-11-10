@@ -1,10 +1,27 @@
 {
   "name": "nestjs-starter-template",
-  "version": "0.0.1",
-  "description": "",
-  "author": "",
-  "private": true,
-  "license": "UNLICENSED",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">= 18.x"
+  },
+  "description": "NestJS starter template",
+  "keywords": [
+    "node.js",
+    "typescript",
+    "nestjs",
+    "rest-api",
+    "jest",
+    "docker",
+    "github-actions"
+  ],
+  "homepage": "https://github.com/hanstanawi/nestjs-starter-template",
+  "bugs": {
+    "url": "https://github.com/hanstanawi/nestjs-starter-template/issues",
+    "email": "hans.tanawi@outlook.com"
+  },
+  "repository": "github:hanstanawi/nestjs-starter-template",
+  "license": "MIT",
+  "author": "Hans Tanawi <hans.tanawi@outlook.com>",
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",

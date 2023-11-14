@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "yoavbls.pretty-ts-errors",
+    "ms-vscode.makefile-tools",
+    "ms-azuretools.vscode-docker",
+    "prisma.prisma",
+    "irongeek.vscode-env",
+    "usernamehw.errorlens",
+    "redhat.vscode-yaml"
+  ]
+}

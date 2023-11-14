@@ -1,6 +1,5 @@
 # Base image
-FROM node:18-alpine
-
+FROM node:18-alpine as dev
 # Install pnpm
 RUN curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm 
 
@@ -13,11 +12,11 @@ COPY --chown=node:node pnpm-lock.yaml ./
 # Load packages into the virtual store form lockfile 
 RUN pnpm fetch --prod
 
-# Bundle app source
-COPY --chown=node:node . .
-
 # Install dependencies
 RUN pnpm install
+
+# Bundle app source
+COPY --chown=node:node . .
 
 # Assign user permission
 USER node

@@ -2,13 +2,15 @@
 # DEV STAGE
 ###################
 # Base image
-FROM node:18 AS dev
+FROM node:18-alpine AS dev
 
 # Install pnpm
-RUN curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
 
 # Required for Prisma Client to work in container
-RUN apt-get update && apt-get install -y openssl
+# RUN apt-get update && apt-get install -y openssl
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -22,7 +24,7 @@ RUN pnpm fetch --prod
 COPY --chown=node:node . .
 
 # Install dependencies
-RUN pnpm install --ignore-scripts
+RUN pnpm install --ignore-scripts --frozen-lockfile
 
 # Generate Prisma database client code
 RUN pnpm db:generate
@@ -33,8 +35,11 @@ USER node
 ###################
 # BUILD STAGE
 ###################
-FROM node:18 AS build
-RUN curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
+FROM node:18-alpine AS build
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
 
 WORKDIR /usr/src/app
 
@@ -52,7 +57,7 @@ RUN pnpm build
 ENV NODE_ENV production
 
 # Running `pnpm install --prod` removes the existing node_modules directory and passing in --prod ensures that only the production dependencies are installed. This ensures that the node_modules directory is as optimized as possible
-RUN pnpm install -P --ignore-scripts
+RUN pnpm install -P --ignore-scripts --offline --frozen-lockfile
 
 USER node
 

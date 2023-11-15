@@ -1,73 +1,92 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+## NestJS Starter Template
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+NestJS starter template with TypeScript and Prisma to kickstart your Node.js project.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+### What's inside?
 
-## Description
+This starter template includes:
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- [NestJS](https://nestjs.com/) - Modern and progressive Node.js framework
+- [TypeScript](https://www.typescriptlang.org/) - Your safety net when writing JavaScript
+- [Prisma](https://prisma.io/) - Next generation Node.js and TypeScript ORM
+- [pnpm](https://pnpm.io/) - Fast and efficient package manager
+- [Docker]() - Blazingly fast frontend build tool
+- [PostgreSQL](https://reactrouter.com/en/main) - Client side routing solution for React
+- [pgAdmin](https://www.pgadmin.org/) - Open-source Postgres admin and development tools
+- [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/) - Find & fix problems in the codebase and format code automatically on save
+- [Makefile](https://lucide.dev/) - Beautiful and consistent open-source icons for React
+- [Pino]() - Node.js logging tools
+- [OpenAPI]() -
+- [Husky](https://typicode.github.io/husky/) - Git hooks tool
+  - [Commit Lint](https://commitlint.js.org/#/) - Force devs to follow conventional commit message
+  - [Lint Staged](https://github.com/lint-staged/lint-staged) - Format & lint your code before committing, block commit if issues are detected
+- [Github Actions](https://docs.github.com/en/actions) - Check, test, and build your code automatically on push and PR
+- [Dependabot](https://github.com/dependabot) - Create pull-request to update your dependencies
+- [Jest](https://jestjs.io/) - Unit test your components
+- [Supertest](https://testing-library.com/docs/react-testing-library/intro/)
 
-## Installation
+### Getting Started
 
-```bash
-$ pnpm install
-```
+1. Clone repo:
 
-## Running the app
+   Tips: You can use [degit](https://github.com/Rich-Harris/degit) to clone this repo without running `git clone`. [Learn more](https://github.com/Rich-Harris/degit)
 
-```bash
-# development
-$ pnpm run start
+   ```bash
+   degit hanstanawi/nestjs-starter-template your-app-name
+   ```
 
-# watch mode
-$ pnpm run start:dev
+   or simply use this template on GitHub when creating new repository.
 
-# production mode
-$ pnpm run start:prod
-```
+2. Install dependencies:
 
-## Test
+   Make sure you have [pnpm](https://pnpm.io/) installed. [Learn more](https://pnpm.io/installation) about installing pnpm.
 
-```bash
-# unit tests
-$ pnpm run test
+   ```
+   pnpm install
+   ```
 
-# e2e tests
-$ pnpm run test:e2e
+3. Run the development server
 
-# test coverage
-$ pnpm run test:cov
-```
+   ```bash
+   pnpm dev
+   ```
 
-## Support
+4. Open [http://localhost:5137](http://localhost:5137) with your browser to see the result.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+   You can start editing the page by modifying `App.tsx`. The page auto-updates as you edit the file.
 
-## Stay in touch
+### Prisma
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### Docker
 
-## License
+### Testing
 
-Nest is [MIT licensed](LICENSE).
+This starter template has Jest and Supertest setup to run unit and integration API tests. Tests are automatically executed on every pull request and push by GitHub Actions CI workflow.
+
+You can run unit tests and e2e tests manually on your machine:
+
+- Run all unit tests
+  ```bash
+  pnpm test
+  ```
+- Run test in watch mode
+  ```bash
+  pnpm test:watch
+  ```
+- Unit test coverage
+  ```bash
+  pnpm test:cov
+  ```
+- Run e2e tests
+  ```bash
+  pnpm test:e2e
+  ```
+
+## Learn More
+
+To learn more about React and TypeScript, take a look at the following resources:
+
+- [Learn React](https://react.dev/learn) - learn about React fundamentals and APIs.
+- [Learn TypeScript](https://learntypescript.dev/) - an interactive course to learn TypeScript
+- [Learn TailwindCSS](https://tailwindcss.com/) - learn about TailwindCSS and its documentation
+- [Learn React with TypeScript](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup) - learn about integrating React with TypeScript

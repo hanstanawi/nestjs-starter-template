@@ -37,7 +37,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build project
-        run: yarn build
+        run: pnpm build
 
       - name: Run Tests
-        run: yarn test
+        run: pnpm test:ci

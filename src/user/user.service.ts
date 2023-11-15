@@ -11,7 +11,6 @@ export class UserService {
   public findUsers(limit: number = 10): Promise<User[]> {
     return this.prismaService.user.findMany({
       take: limit,
-      skip: 1,
     });
   }
 

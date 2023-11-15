@@ -15,16 +15,16 @@ RUN corepack enable
 # Create app directory
 WORKDIR /usr/src/app
 
-COPY --chown=node:node pnpm-lock.yaml ./
+COPY --chown=node:node package.json pnpm-lock.yaml ./
 
 # Load packages into the virtual store form lockfile 
 RUN pnpm fetch --prod
 
-# Bundle app source
-COPY --chown=node:node . .
-
 # Install dependencies
 RUN pnpm install --ignore-scripts --frozen-lockfile
+
+# Bundle app source
+COPY --chown=node:node . .
 
 # Generate Prisma database client code
 RUN pnpm db:generate
@@ -42,8 +42,6 @@ ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 
 WORKDIR /usr/src/app
-
-COPY --chown=node:node pnpm-lock.yaml ./
 
 # In order to run `pnpm build` we need access to the Nest CLI which is a dev dependency. In the previous development stage we ran `pnpm install` which installed all dependencies, so we can copy over the node_modules directory from the development image
 COPY --chown=node:node --from=dev /usr/src/app/node_modules ./node_modules

@@ -62,7 +62,7 @@ const mockUserService = {
     ),
   deleteUser: jest
     .fn<{ deleted: boolean }, [string]>()
-    .mockImplementation((id) => ({ deleted: true })),
+    .mockImplementation((id) => ({ id, deleted: true })),
 };
 
 describe('UserController', () => {

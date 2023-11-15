@@ -27,7 +27,7 @@ export class UserService {
 
   public updateUser(id: string, dto: UpdateUserDto) {}
 
-  public deleteUser(id: string) {
+  public deleteUser(id: string): Promise<User> {
     return this.prismaService.user.delete({
       where: {
         id,

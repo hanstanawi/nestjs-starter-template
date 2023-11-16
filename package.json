@@ -25,7 +25,7 @@
   "scripts": {
     "build": "nest build",
     "db:deploy": "prisma migrate deploy",
-    "db:dev:up": "docker-compose up postgres -d --build",
+    "db:up": "docker-compose up postgres -d --build",
     "db:generate": "prisma generate",
     "db:view": "prisma studio",
     "format:check": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\"",

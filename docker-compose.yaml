@@ -7,14 +7,14 @@ services:
     container_name: backend_app
     restart: unless-stopped
     volumes:
-      - app:/user/src/app
-      - /user/src/app/node_modules
+      - ./:/app
+      - /app/node_modules
     env_file:
       - .env
     environment:
       DATABASE_URL: postgresql://${POSTGRES_USERNAME}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}?schema=public
     ports:
-      - '3333:3000'
+      - '3333:3333'
     depends_on:
       - postgres
     networks:

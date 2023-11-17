@@ -11,19 +11,19 @@ This starter template includes:
 - [Prisma](https://prisma.io/) - Next generation Node.js and TypeScript ORM
 - [pnpm](https://pnpm.io/) - Fast and efficient package manager
 - [Docker](https://docs.docker.com/get-started/) - Develop, ship, and run your app with containers
-- [PostgreSQL](https://reactrouter.com/en/main) - Popular open-source SQL relational database management system
+- [PostgreSQL](https://www.postgresql.org/) - Popular open-source SQL relational database management system
 - [pgAdmin](https://www.pgadmin.org/) - Open-source Postgres admin and development tools
 - [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/) - Find & fix problems in the codebase and format code automatically on save
-- [Makefile](https://lucide.dev/) - Beautiful and consistent open-source icons for React
-- [Pino]() - Node.js logging tools
-- [OpenAPI]() -
+- [Makefile](https://makefiletutorial.com/) - Handy automation tool to run and compile your programs more efficiently
+- [Pino](https://getpino.io) - Node.js logging tools
+- [OpenAPI](https://swagger.io/resources/open-api/) - Standard specification for HTTP APIs
 - [Husky](https://typicode.github.io/husky/) - Git hooks tool
   - [Commit Lint](https://commitlint.js.org/#/) - Force devs to follow conventional commit message
   - [Lint Staged](https://github.com/lint-staged/lint-staged) - Format & lint your code before committing, block commit if issues are detected
 - [Github Actions](https://docs.github.com/en/actions) - Check, test, and build your code automatically on push and PR
 - [Dependabot](https://github.com/dependabot) - Create pull-request to update your dependencies
-- [Jest](https://jestjs.io/) - Unit test your components
-- [Supertest](https://testing-library.com/docs/react-testing-library/intro/) -
+- [Jest](https://jestjs.io/) - Popular JavaScript unit testing library
+- [Supertest](https://github.com/ladjs/supertest) - HTTP testing tool
 
 ### Getting Started
 

@@ -28,6 +28,8 @@
     "db:up": "docker-compose up postgres -d --build",
     "db:generate": "prisma generate",
     "db:view": "prisma studio",
+    "db:test:deploy": "prisma migrate deploy",
+    "db:test:up": "docker-compose up postgres -d --build",
     "format:check": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\"",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "prepare": "husky install && prisma generate",

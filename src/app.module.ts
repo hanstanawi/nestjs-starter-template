@@ -34,12 +34,15 @@ import { UserModule } from './user/user.module';
         customErrorMessage: (req, res) => {
           return 'Request errored with status code: ' + res.statusCode;
         },
-        transport: {
-          target: 'pino-pretty',
-          options: {
-            singleLine: true,
-          },
-        },
+        transport:
+          process.env.NODE_ENV !== 'production'
+            ? {
+                target: 'pino-pretty',
+                options: {
+                  singleLine: true,
+                },
+              }
+            : undefined,
       },
     }),
     UserModule,

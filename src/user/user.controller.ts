@@ -3,6 +3,7 @@ import {
   Controller,
   Delete,
   Get,
+  Logger,
   NotFoundException,
   Param,
   Post,
@@ -14,6 +15,8 @@ import { UserService } from './user.service';
 
 @Controller('users')
 export class UserController {
+  private readonly logger = new Logger(UserController.name);
+
   constructor(private readonly userService: UserService) {}
 
   @Get()
@@ -26,7 +29,17 @@ export class UserController {
     const user = await this.userService.findUserById(id);
 
     if (!user) {
-      throw new NotFoundException(`User with ${id} does not exist`);
+      const exception = new NotFoundException(`User with ${id} does not exist`);
+
+      this.logger.error(
+        {
+          message: exception.message,
+          statusCode: exception.getStatus(),
+        },
+        exception.stack,
+      );
+
+      throw exception;
     }
 
     return user;

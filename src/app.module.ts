@@ -40,6 +40,8 @@ import { UserModule } from './user/user.module';
                 target: 'pino-pretty',
                 options: {
                   singleLine: true,
+                  colorizeObjects: true,
+                  colorize: true,
                 },
               }
             : undefined,

@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { User } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 
@@ -6,6 +6,8 @@ import { CreateUserDto, UpdateUserDto } from './dtos';
 
 @Injectable()
 export class UserService {
+  private readonly logger = new Logger(UserService.name);
+
   constructor(private readonly prismaService: PrismaService) {}
 
   public findUsers(limit: number = 10): Promise<User[]> {
@@ -22,23 +24,37 @@ export class UserService {
     });
   }
 
-  public insertUser({ name, email }: CreateUserDto) {
-    return this.prismaService.user.create({
+  public async insertUser({ name, email }: CreateUserDto) {
+    const created = await this.prismaService.user.create({
       data: {
         name: name ?? undefined,
         email,
       },
     });
+
+    this.logger.log({ message: `User ${email} inserted successfully` });
+
+    return created;
   }
 
   public async updateUser(id: string, { email, name }: UpdateUserDto) {
     const existingUser = await this.findUserById(id);
 
     if (!existingUser) {
-      throw new NotFoundException(`User with ${id} id does not exist`);
+      const exception = new NotFoundException(
+        `User with ${id} id does not exist`,
+      );
+      this.logger.error(
+        {
+          message: exception.message,
+          statusCode: exception.getStatus(),
+        },
+        exception.stack,
+      );
+      throw exception;
     }
 
-    return this.prismaService.user.update({
+    const updated = await this.prismaService.user.update({
       where: {
         id,
       },
@@ -47,6 +63,10 @@ export class UserService {
         name: name ?? undefined,
       },
     });
+
+    this.logger.log({ message: `User ${id} updated successfully` });
+
+    return updated;
   }
 
   public async deleteUser(
@@ -57,6 +77,8 @@ export class UserService {
         id,
       },
     });
+
+    this.logger.log({ message: `User ${id} deleted successfully` });
 
     return {
       id: deleted.id,

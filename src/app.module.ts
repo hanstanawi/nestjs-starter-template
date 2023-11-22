@@ -35,7 +35,7 @@ import { UserModule } from './user/user.module';
           return 'Request errored with status code: ' + res.statusCode;
         },
         transport:
-          process.env.NODE_ENV !== 'production'
+          process.env.NODE_ENV === 'development'
             ? {
                 target: 'pino-pretty',
                 options: {

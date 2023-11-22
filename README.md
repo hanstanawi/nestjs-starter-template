@@ -55,7 +55,7 @@ This starter template includes:
 
 4. Run the database
 
-   Since this project uses Prisma as the ORM. The Postgres database container needs to be running upon the project init to avoid any Prisma connection error.
+   Since this project uses Prisma ORM. The Postgres database container needs to be running upon the project init to avoid any Prisma connection error.
 
    ```bash
    pnpm db:up
@@ -127,13 +127,23 @@ This NestJS starter template comes with Prisma ORM, a modern Node.js and TypeScr
    pnpm db:up
    ```
 
-2. Run existing migrations
+2. Create a database migration
+
+   Whenever you make any changes to the `schema.prisma` file, you need to create a migration to reflect the changes you made on the schema to the database.
+
+   To create a migration, simply run this command, then enter the name of the migration. e.g. `add_user_table`
+
+   ```bash
+   pnpm prisma migrate dev
+   ```
+
+3. Run existing migrations
 
    ```bash
    pnpm db:deploy
    ```
 
-3. Generate Prisma Client
+4. Generate Prisma Client
 
    It runs the `prisma generate` command under the hood to generate type definitions based on the `schema.prisma` schema.
 
@@ -141,11 +151,17 @@ This NestJS starter template comes with Prisma ORM, a modern Node.js and TypeScr
    pnpm db:generate
    ```
 
-4. Run Prisma Studio
+5. Run Prisma Studio
 
-### Testing
+   It runs the [Prisma Studio](https://www.prisma.io/studio) tools to open Prisma database admin client tools.
 
-This starter template has Jest and Supertest setup to run unit and integration API tests. Tests are automatically executed on every pull request and push by GitHub Actions CI workflow.
+   ```bash
+   pnpm db:studio
+   ```
+
+### Unit Testing
+
+This starter template has Jest setup to run unit and integration API tests. Tests are automatically executed on every pull request and push by GitHub Actions CI workflow.
 
 You can run unit tests and e2e tests manually on your machine:
 
@@ -161,10 +177,45 @@ You can run unit tests and e2e tests manually on your machine:
   ```bash
   pnpm test:cov
   ```
-- Run e2e tests
-  ```bash
-  pnpm test:e2e
-  ```
+
+### Integration Testing
+
+This starter template has integration tests with Jest and Supertest setup out of the box. In integration tests, we test the full feature of each APIs to ensure each API behave correctly and spot bugs early.
+
+We need to test the database connection and integration with the app. Therefore, before we run integration tests, all database connection needs to be setup. Different database for integration tests needs to be setup, so it will not disturb our development database.
+
+1. Create `.env.test` file to load env variables for test environment
+
+   Your existing `.env` variables may vary. However, you should change these `.env` variables to test variables
+
+   ```plaintext
+   POSTGRES_USERNAME="YOUR_TEST_DB_USERNAME"
+   POSTGRES_PASSWORD="YOUR_TEST_DB_PASSWORD"
+   POSTGRES_DB="YOUR_TEST_DB_NAME"
+   DATABASE_URL=""
+   ```
+
+2. Run integration test setup script
+
+   ```bash
+   make e2e-test
+   ```
+
+   In this script, it runs the Postgres docker container test database and run existing migrations to test database.
+
+3. Run integration tests
+
+   - Run all integration tests
+
+     ```bash
+     pnpm test:e2e
+     ```
+
+   - Watch mode
+
+     ```bash
+     pnpm test:e2e:watch
+     ```
 
 ### OpenAPI Specification
 

@@ -166,7 +166,27 @@ You can run unit tests and e2e tests manually on your machine:
   pnpm test:e2e
   ```
 
-## Learn More
+### OpenAPI Specification
+
+This starter template has [OpenAPI Swagger](https://swagger.io/specification/) documentation setup out of the box. You can update the API documentation based to your liking on your application API specification. To learn more about OpenAPI with NestJS configuration, you can visit the documentation [here](https://docs.nestjs.com/openapi/introduction).
+
+To view OpenAPI documentation page
+
+1. Start the development server
+
+   ```bash
+   pnpm start:dev
+   ```
+
+   Don't forget to start the postrges container, otherwise Prisma will throw a connection error when starting up the app.
+
+   ```bash
+   pnpm db:up
+   ```
+
+2. Open your browser and visit [http://localhost:3333/api](http://localhost:3333/api) to view the API documentation.
+
+### Learn More
 
 To learn more about NestJS and its ecosystem, take a look at the following resources:
 

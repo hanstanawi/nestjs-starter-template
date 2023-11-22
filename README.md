@@ -23,7 +23,7 @@ This starter template includes:
 - [Github Actions](https://docs.github.com/en/actions) - Check, test, and build your code automatically on push and PR
 - [Dependabot](https://github.com/dependabot) - Create pull-request to update your dependencies
 - [Jest](https://jestjs.io/) - Popular JavaScript unit testing library
-- [Supertest](https://github.com/ladjs/supertest) - HTTP testing tool
+- [Supertest](https://github.com/ladjs/supertest) - SuperAgent driven library for testing HTTP servers
 
 ### Getting Started
 
@@ -85,7 +85,7 @@ This starter template includes:
 
 ### Docker
 
-You can run this project without having Node.js installed on your machine by running it using Docker as container. You can learn more about Docker [here](https://docs.docker.com/get-started/).
+You can run this project without having Node.js installed on your machine by running it using Docker as a container. You can learn more about Docker [here](https://docs.docker.com/get-started/).
 
 Make sure Docker is installed and Docker daemon is running on your machine. You can learn more how to download and setup Docker [here](https://www.docker.com/products/docker-desktop/).
 
@@ -242,8 +242,10 @@ To view OpenAPI documentation page
 To learn more about NestJS and its ecosystem, take a look at the following resources:
 
 - [Learn NestJS](https://docs.nestjs.com/) - learn about NestJS fundamentals, techniques, and recipes.
+- [Learn NestJS tutorial series](https://wanago.io/courses/api-with-nestjs/) - comprehensive tutorial to learn NestJS from the ground up.
 - [Learn TypeScript](https://learntypescript.dev/) - an interactive course to learn TypeScript
 - [Learn Prisma](https://prisma.io/) - learn about Prisma ORM core concepts, queries, and migrations.
 - [Learn Building REST API with NestJS and Prisma](https://www.prisma.io/blog/nestjs-prisma-rest-api-7D056s1BmOL0) - learn about building a REST API with NestJS and Prisma
 - [Learn PostgreSQL](https://www.postgresqltutorial.com/) - learn the fundamentals of PostgreSQL
 - [Learn Docker](https://docs.docker.com/get-started/) - learn about the basics of Docker
+- [Learn Testing with Prisma](https://www.prisma.io/blog/series/ultimate-guide-to-testing-eTzz0U4wwV) - learn about multiple testing techniques with Prisma

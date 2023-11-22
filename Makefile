@@ -11,3 +11,7 @@ docker-start: ;@echo "Starting ${PROJECT} containers....."; \
 
 docker-stop: ;@echo "Pausing ${PROJECT} containers....."; \
 	docker compose stop
+
+e2e-test: ;@echo "Setup ${PROJECT} E2E tests environment....."; \
+	pnpm db:test:up
+	pnpm db:test:deploy

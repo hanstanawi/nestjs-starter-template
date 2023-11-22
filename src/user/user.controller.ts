@@ -3,6 +3,8 @@ import {
   Controller,
   Delete,
   Get,
+  HttpCode,
+  HttpStatus,
   Logger,
   NotFoundException,
   Param,
@@ -76,6 +78,7 @@ export class UserController {
   }
 
   @Put(':id')
+  @HttpCode(HttpStatus.CREATED)
   @ApiParam({
     name: 'id',
     description: 'User id',

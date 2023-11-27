@@ -26,10 +26,12 @@
     "build": "nest build",
     "db:deploy": "prisma migrate deploy",
     "db:up": "docker-compose up postgres -d --build",
+    "db:down": "docker-compose down",
     "db:generate": "prisma generate",
     "db:view": "prisma studio",
-    "db:test:deploy": "prisma migrate deploy",
-    "db:test:up": "dotenv -e .env.test -- docker-compose up postgres -d --build",
+    "db:test:deploy": "dotenv -e .env.test -- prisma migrate deploy",
+    "db:test:up": "dotenv -e .env.test -- docker-compose -f docker-compose.test.yaml up -d --build",
+    "db:test:down": "docker-compose -f docker-compose.test.yaml down",
     "format:check": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\"",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "prepare": "husky install && prisma generate",
@@ -45,8 +47,8 @@
     "test:ci": "jest --ci",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json",
-    "test:e2e:watch": "jest --config ./test/jest-e2e.json --watch"
+    "test:e2e": "dotenv -e .env.test -- jest --config ./test/jest-e2e.json",
+    "test:e2e:watch": "dotenv -e .env.test -- jest --config ./test/jest-e2e.json --watch"
   },
   "dependencies": {
     "@nestjs/common": "^10.2.8",
@@ -57,6 +59,7 @@
     "@prisma/client": "^5.6.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
+    "helmet": "^7.1.0",
     "nestjs-pino": "^3.5.0",
     "pino-http": "^8.5.1",
     "pino-pretty": "^10.2.3",

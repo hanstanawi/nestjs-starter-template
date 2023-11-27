@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  postgres_test:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    container_name: postgres_test
+    env_file:
+      - .env.test
+    environment:
+      - POSTGRES_USER=${POSTGRES_USERNAME:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - postgres_test:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    networks:
+      - postgres_test
+networks:
+  postgres_test:
+    driver: bridge
+volumes:
+  postgres_test:

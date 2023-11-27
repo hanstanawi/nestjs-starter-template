@@ -182,7 +182,7 @@ You can run unit tests and e2e tests manually on your machine:
 
 This starter template has integration tests with Jest and Supertest setup out of the box. In integration tests, we test the full feature of each APIs to ensure each API behave correctly and spot bugs early.
 
-We need to test the database connection and integration with the app. Therefore, before we run integration tests, all database connection needs to be setup. Different database for integration tests needs to be setup, so it will not disturb our development database.
+We need to test the database connection and integration with the app. Therefore, before we run integration tests, all database connection needs to be setup. Different database for integration tests needs to be setup, so it will not disturb our development database. The Postgres test database container configuration can be found in `docker-compose.test.yaml` to learn more.
 
 1. Create `.env.test` file to load env variables for test environment
 
@@ -198,7 +198,7 @@ We need to test the database connection and integration with the app. Therefore,
 2. Run integration test setup script
 
    ```bash
-   make e2e-test
+   make e2e-test-up
    ```
 
    In this script, it runs the Postgres docker container test database and run existing migrations to test database.
@@ -216,6 +216,12 @@ We need to test the database connection and integration with the app. Therefore,
      ```bash
      pnpm test:e2e:watch
      ```
+
+4. Stop Postgres test database container
+
+   ```bash
+   make e2e-test-down
+   ```
 
 ### OpenAPI Specification
 

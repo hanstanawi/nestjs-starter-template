@@ -51,10 +51,10 @@
     "test:e2e:watch": "dotenv -e .env.test -- jest --config ./test/jest-e2e.json --watch"
   },
   "dependencies": {
-    "@nestjs/common": "^10.2.8",
+    "@nestjs/common": "^10.2.10",
     "@nestjs/config": "^3.1.1",
-    "@nestjs/core": "^10.2.8",
-    "@nestjs/platform-express": "^10.2.8",
+    "@nestjs/core": "^10.2.10",
+    "@nestjs/platform-express": "^10.2.10",
     "@nestjs/swagger": "^7.1.16",
     "@prisma/client": "^5.6.0",
     "class-transformer": "^0.5.1",

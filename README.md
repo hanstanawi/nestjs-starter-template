@@ -11,6 +11,7 @@ This starter template includes:
 - [Prisma](https://prisma.io/) - Next generation Node.js and TypeScript ORM
 - [pnpm](https://pnpm.io/) - Fast and efficient package manager
 - [Docker](https://docs.docker.com/get-started/) - Develop, ship, and run your app with containers
+- [Redis]() - Popular in-memory key-value database and caching system
 - [PostgreSQL](https://www.postgresql.org/) - Popular open-source SQL relational database management system
 - [pgAdmin](https://www.pgadmin.org/) - Open-source Postgres admin and development tools
 - [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/) - Find & fix problems in the codebase and format code automatically on save
@@ -129,7 +130,7 @@ This NestJS starter template comes with Prisma ORM, a modern Node.js and TypeScr
 
 2. Create a database migration
 
-   Whenever you make any changes to the `schema.prisma` file, you need to create a migration to reflect the changes you made on the schema to the database.
+   Whenever you make any changes in the `schema.prisma` file, you need to create a migration to reflect the changes you made on the schema to the database.
 
    To create a migration, simply run this command, then enter the name of the migration. e.g. `add_user_table`
 
@@ -193,6 +194,9 @@ We need to test the database connection and integration with the app. Therefore,
    POSTGRES_PASSWORD="YOUR_TEST_DB_PASSWORD"
    POSTGRES_DB="YOUR_TEST_DB_NAME"
    DATABASE_URL=""
+
+   REDIS_HOST=""
+   REDIS_PORT=""
    ```
 
 2. Run integration test setup script

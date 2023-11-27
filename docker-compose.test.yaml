@@ -16,8 +16,18 @@ services:
       - '5432:5432'
     networks:
       - postgres_test
+  redis_test:
+    image: redis:alpine
+    restart: unless-stopped
+    container_name: redis_test
+    ports:
+      - 6379:6379
+    volumes:
+      - redis_test:/data
 networks:
   postgres_test:
     driver: bridge
 volumes:
   postgres_test:
+  redis_test:
+    driver: local

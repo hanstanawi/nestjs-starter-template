@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { DatabaseService } from 'src/database/database.service';
 
 import { UserService } from './user.service';
 
@@ -29,7 +29,7 @@ const mockUsers = [
 
 const mockUser = mockUsers[0];
 
-const mockPrismaService = {
+const mockDatabaseService = {
   user: {
     findMany: jest.fn().mockResolvedValue(mockUsers),
     findUnique: jest.fn().mockResolvedValue(mockUser),
@@ -49,8 +49,8 @@ describe('UserService', () => {
       providers: [
         UserService,
         {
-          provide: PrismaService,
-          useValue: mockPrismaService,
+          provide: DatabaseService,
+          useValue: mockDatabaseService,
         },
       ],
     }).compile();

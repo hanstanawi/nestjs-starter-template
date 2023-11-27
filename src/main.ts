@@ -1,6 +1,7 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import helmet from 'helmet';
 import { Logger, LoggerErrorInterceptor } from 'nestjs-pino';
 
 import { AppModule } from './app.module';
@@ -14,6 +15,7 @@ async function bootstrap() {
   app.enableCors();
   app.useGlobalPipes(new ValidationPipe());
   app.setGlobalPrefix('api/v1');
+  app.use(helmet());
 
   const config = new DocumentBuilder()
     .setTitle('NestJS Starter Template API')

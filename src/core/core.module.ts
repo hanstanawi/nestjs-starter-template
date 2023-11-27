@@ -3,6 +3,7 @@ import { Global, Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as redisStore from 'cache-manager-redis-store';
 import { LoggerModule } from 'nestjs-pino';
+import { DatabaseModule } from 'src/database/database.module';
 
 import { CacheService } from './cache/cache.service';
 
@@ -29,6 +30,7 @@ import { CacheService } from './cache/cache.service';
       },
       inject: [ConfigService],
     }),
+    DatabaseModule,
     LoggerModule.forRoot({
       pinoHttp: {
         autoLogging: process.env.NODE_ENV === 'development',

@@ -1,8 +1,8 @@
 import { HttpStatus, INestApplication, ValidationPipe } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { User } from '@prisma/client';
-import { PrismaModule } from 'src/prisma/prisma.module';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { DatabaseModule } from 'src/database/database.module';
+import { DatabaseService } from 'src/database/database.service';
 import { UserModule } from 'src/user/user.module';
 import * as request from 'supertest';
 
@@ -14,7 +14,7 @@ const mockUser = {
 
 describe('UserController (e2e)', () => {
   let app: INestApplication;
-  let prisma: PrismaService;
+  let prisma: DatabaseService;
   let httpServer: any;
   let createdUser: User;
 
@@ -26,13 +26,13 @@ describe('UserController (e2e)', () => {
 
   beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [UserModule, PrismaModule],
+      imports: [UserModule, DatabaseModule],
     }).compile();
 
     app = moduleFixture.createNestApplication();
     app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
 
-    prisma = app.get(PrismaService);
+    prisma = app.get(DatabaseService);
     httpServer = app.getHttpServer();
     await seedDb();
     await app.init();

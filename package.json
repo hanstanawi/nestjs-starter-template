@@ -25,7 +25,7 @@
   "scripts": {
     "build": "nest build",
     "db:deploy": "prisma migrate deploy",
-    "db:up": "docker-compose up postgres -d --build",
+    "db:up": "docker-compose up postgres redis -d --build",
     "db:down": "docker-compose down",
     "db:generate": "prisma generate",
     "db:view": "prisma studio",
@@ -101,6 +101,9 @@
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.2.2"
+  },
+  "prisma": {
+    "schema": "src/database/schema.prisma"
   },
   "jest": {
     "moduleFileExtensions": [

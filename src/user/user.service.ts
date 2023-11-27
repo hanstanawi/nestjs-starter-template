@@ -1,6 +1,6 @@
 import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { User } from '@prisma/client';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { DatabaseService } from 'src/database/database.service';
 
 import { CreateUserDto, UpdateUserDto } from './dtos';
 
@@ -8,7 +8,7 @@ import { CreateUserDto, UpdateUserDto } from './dtos';
 export class UserService {
   private readonly logger = new Logger(UserService.name);
 
-  constructor(private readonly prismaService: PrismaService) {}
+  constructor(private readonly prismaService: DatabaseService) {}
 
   public findUsers(limit: number = 10): Promise<User[]> {
     return this.prismaService.user.findMany({

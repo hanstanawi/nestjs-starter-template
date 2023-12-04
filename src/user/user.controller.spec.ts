@@ -43,7 +43,7 @@ const mockUserService = {
     .mockImplementation((user) =>
       Promise.resolve({
         id: '1',
-        name: user.name,
+        name: user.name ?? null,
         email: user.email,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -54,7 +54,7 @@ const mockUserService = {
     .mockImplementation((id, user) =>
       Promise.resolve({
         id,
-        name: user.name,
+        name: user.name ?? null,
         email: user.email,
         createdAt: new Date(),
         updatedAt: new Date(),

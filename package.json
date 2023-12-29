@@ -64,7 +64,7 @@
     "class-validator": "^0.14.0",
     "helmet": "^7.1.0",
     "nestjs-pino": "^3.5.0",
-    "pino-http": "^8.5.1",
+    "pino-http": "^8.6.1",
     "pino-pretty": "^10.3.0",
     "reflect-metadata": "^0.1.14",
     "rxjs": "^7.8.1"

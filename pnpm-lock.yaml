@@ -48,8 +48,8 @@ dependencies:
     specifier: ^10.1.0
     version: 10.1.0
   pino-pretty:
-    specifier: ^11.1.0
-    version: 11.1.0
+    specifier: ^11.2.1
+    version: 11.2.1
   reflect-metadata:
     specifier: ^0.2.2
     version: 0.2.2
@@ -5160,8 +5160,8 @@ packages:
       process-warning: 3.0.0
     dev: false
 
-  /pino-pretty@11.1.0:
-    resolution: {integrity: sha512-PjBzFL7IMSl1YkS9cSVWC+4gONmW0Fi+fvUzy74zK6RJHk4RkfW+e22NydRrGEtBRa5n6/oPNLPqjUeQrzqcLQ==}
+  /pino-pretty@11.2.1:
+    resolution: {integrity: sha512-O05NuD9tkRasFRWVaF/uHLOvoRDFD7tb5VMertr78rbsYFjYp48Vg3477EshVAF5eZaEw+OpDl/tu+B0R5o+7g==}
     hasBin: true
     dependencies:
       colorette: 2.0.20

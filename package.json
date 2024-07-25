@@ -65,7 +65,7 @@
     "helmet": "^7.1.0",
     "nestjs-pino": "^4.1.0",
     "pino-http": "^10.2.0",
-    "pino-pretty": "^11.2.1",
+    "pino-pretty": "^11.2.2",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   },

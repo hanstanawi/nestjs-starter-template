@@ -72,7 +72,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
-    "@nestjs/cli": "^10.4.5",
+    "@nestjs/cli": "^10.4.7",
     "@nestjs/schematics": "^10.2.1",
     "@nestjs/testing": "^10.4.6",
     "@types/cache-manager": "^4.0.6",

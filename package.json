@@ -57,7 +57,7 @@
     "@nestjs/core": "^10.4.15",
     "@nestjs/platform-express": "^10.4.15",
     "@nestjs/swagger": "^7.4.2",
-    "@prisma/client": "^5.19.1",
+    "@prisma/client": "^6.3.0",
     "cache-manager": "^5.7.6",
     "cache-manager-redis-store": "3",
     "class-transformer": "^0.5.1",

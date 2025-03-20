@@ -62,7 +62,7 @@
     "cache-manager-redis-store": "3",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
-    "helmet": "^8.0.0",
+    "helmet": "^8.1.0",
     "nestjs-pino": "^4.3.1",
     "pino-http": "^10.4.0",
     "pino-pretty": "^13.0.0",

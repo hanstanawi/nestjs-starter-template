@@ -85,7 +85,7 @@
     "@typescript-eslint/parser": "^6.21.0",
     "dotenv-cli": "^8.0.0",
     "eslint": "^8.57.0",
-    "eslint-config-prettier": "^10.1.2",
+    "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-jest": "^28.11.0",
     "eslint-plugin-prettier": "^5.4.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
